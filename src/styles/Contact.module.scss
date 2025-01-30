@@ -1,0 +1,73 @@
+@import 'globals';
+
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 100px 20px;
+  flex: 1;
+
+  h1 {
+    font-size: 36px;
+    color: $primary-color;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media (max-width: $tablet) {
+      font-size: 28px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
+
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+
+    .formGroup {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        font-size: 18px;
+        color: $primary-color;
+        margin-bottom: 5px;
+
+        @media (max-width: $mobile) {
+          font-size: 16px;
+        }
+      }
+
+      input, textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+
+        @media (max-width: $mobile) {
+          font-size: 14px;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+      }
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      font-size: 18px;
+
+      @media (max-width: $mobile) {
+        font-size: 16px;
+      }
+    }
+  }
+}

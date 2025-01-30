@@ -1,0 +1,64 @@
+@import 'globals';
+
+.services {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 100px 20px;
+  flex: 1;
+
+  h1 {
+    font-size: 36px;
+    color: $primary-color;
+    margin-bottom: 40px;
+    text-align: center;
+
+    @media (max-width: $tablet) {
+      font-size: 28px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+
+    @media (max-width: $mobile) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    h3 {
+      font-size: 24px;
+      color: $primary-color;
+      margin-bottom: 10px;
+
+      @media (max-width: $mobile) {
+        font-size: 20px;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      color: #4a5568;
+
+      @media (max-width: $mobile) {
+        font-size: 14px;
+      }
+    }
+  }
+}

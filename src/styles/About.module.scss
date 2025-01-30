@@ -1,0 +1,36 @@
+@import 'globals';
+
+.about {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  padding: 100px 20px;
+  flex: 1;
+
+  h1 {
+    font-size: 36px;
+    color: $primary-color;
+    margin-bottom: 20px;
+
+    @media (max-width: $tablet) {
+      font-size: 28px;
+    }
+
+    @media (max-width: $mobile) {
+      font-size: 24px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    color: #4a5568;
+    margin-bottom: 20px;
+
+    @media (max-width: $mobile) {
+      font-size: 16px;
+    }
+  }
+}
