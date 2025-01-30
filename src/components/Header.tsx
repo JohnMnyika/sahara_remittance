@@ -12,16 +12,16 @@ export default function Header() {
                 </div>
                 <nav className={styles.nav}>
                     <Link href="/">
-                        <motion.a whileHover={{ scale: 1.1 }}>Home</motion.a>
+                        <motion.div whileHover={{ scale: 1.1 }}>Home</motion.div>
                     </Link>
                     <Link href="/about">
-                        <motion.a whileHover={{ scale: 1.1 }}>About Us</motion.a>
+                        <motion.div whileHover={{ scale: 1.1 }}>About Us</motion.div>
                     </Link>
                     <Link href="/services">
-                        <motion.a whileHover={{ scale: 1.1 }}>Our Services</motion.a>
+                        <motion.div whileHover={{ scale: 1.1 }}>Our Services</motion.div>
                     </Link>
                     <Link href="/contact">
-                        <motion.a whileHover={{ scale: 1.1 }}>Contact Us</motion.a>
+                        <motion.div whileHover={{ scale: 1.1 }}>Contact Us</motion.div>
                     </Link>
                 </nav>
             </div>
