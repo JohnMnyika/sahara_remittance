@@ -21,6 +21,9 @@ export default function Header() {
                     <Link href="/services">
                         <motion.div whileHover={{ scale: 1.1 }}>Our Services</motion.div>
                     </Link>
+                    <Link href="/careers">
+                        <motion.div whileHover={{ scale: 1.1 }}>Careers</motion.div>
+                    </Link>
                     <Link href="/contact">
                         <motion.div whileHover={{ scale: 1.1 }}>Contact Us</motion.div>
                     </Link>

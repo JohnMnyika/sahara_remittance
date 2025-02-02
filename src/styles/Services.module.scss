@@ -39,6 +39,12 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    transition: transform 0.3s ease;
+
+    img {
+      height: 60px;
+      margin-bottom: 20px;
+    }
 
     h3 {
       font-size: 24px;
@@ -53,9 +59,25 @@
     p {
       font-size: 16px;
       color: #4a5568;
+      margin-bottom: 20px;
 
       @media (max-width: 480px) {
         font-size: 14px;
+      }
+    }
+
+    .button {
+      background: #1a365d;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s ease;
+
+      &:hover {
+        background: #2c5282;
       }
     }
   }

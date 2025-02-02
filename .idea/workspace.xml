@@ -5,26 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="689b132a-cc3a-4b04-9fb6-9507c446c89c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/careers.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/styles/Careers.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ForexExchange.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ForexExchange.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/contact.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/contact.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/About.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/About.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Contact.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Contact.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Footer.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Footer.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/ForexExchange.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/ForexExchange.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Header.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Header.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/Home.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Home.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/services.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/services.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/styles/Services.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/Services.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +112,7 @@
       <updated>1738212481716</updated>
       <workItem from="1738212485268" duration="9407000" />
       <workItem from="1738235326155" duration="933000" />
-      <workItem from="1738496472272" duration="6393000" />
+      <workItem from="1738496472272" duration="8920000" />
     </task>
     <servers />
   </component>
