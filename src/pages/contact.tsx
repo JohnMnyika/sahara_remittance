@@ -24,8 +24,7 @@ export default function Contact() {
                     </div>
                     <div className={styles.formGroup}>
                         <label htmlFor="message">Message</label>
-                        <textarea id="message" rows="4"></textarea>
-                    </div>
+                        <textarea id="message" rows={4}></textarea></div>
                     <button type="submit" className="button">Submit</button>
                 </form>
             </div>

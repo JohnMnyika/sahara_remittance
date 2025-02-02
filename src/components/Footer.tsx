@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from '../styles/Footer.module.scss';
 
 export default function Footer() {
@@ -12,10 +13,10 @@ export default function Footer() {
                     <div className={styles.footerSection}>
                         <h3>Quick Links</h3>
                         <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About Us</a></li>
-                            <li><a href="/services">Our Services</a></li>
-                            <li><a href="/contact">Contact Us</a></li>
+                            <li><Link href="/">Home</Link></li>
+                            <li><Link href="/about">About Us</Link></li>
+                            <li><Link href="/services">Our Services</Link></li>
+                            <li><Link href="/contact">Contact Us</Link></li>
                         </ul>
                     </div>
                     <div className={styles.footerSection}>

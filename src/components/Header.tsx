@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from '../styles/Header.module.scss';
@@ -7,7 +8,7 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.logo}>
-                    <img src="/logo.png" alt="Sahara Remittance Logo" />
+                    <Image src="/logo.png" alt="Sahara Remittance Logo" width={40} height={40} />
                     <span>Sahara Remittance</span>
                 </div>
                 <nav className={styles.nav}>

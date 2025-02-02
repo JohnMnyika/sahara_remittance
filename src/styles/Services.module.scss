@@ -1,5 +1,3 @@
-@import 'globals';
-
 .services {
   min-height: 100vh;
   display: flex;
@@ -12,15 +10,15 @@
 
   h1 {
     font-size: 36px;
-    color: $primary-color;
+    color: #1a365d;
     margin-bottom: 40px;
     text-align: center;
 
-    @media (max-width: $tablet) {
+    @media (max-width: 768px) {
       font-size: 28px;
     }
 
-    @media (max-width: $mobile) {
+    @media (max-width: 480px) {
       font-size: 24px;
     }
   }
@@ -30,7 +28,7 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
 
-    @media (max-width: $mobile) {
+    @media (max-width: 480px) {
       grid-template-columns: 1fr;
     }
   }
@@ -44,10 +42,10 @@
 
     h3 {
       font-size: 24px;
-      color: $primary-color;
+      color: #1a365d;
       margin-bottom: 10px;
 
-      @media (max-width: $mobile) {
+      @media (max-width: 480px) {
         font-size: 20px;
       }
     }
@@ -56,7 +54,7 @@
       font-size: 16px;
       color: #4a5568;
 
-      @media (max-width: $mobile) {
+      @media (max-width: 480px) {
         font-size: 14px;
       }
     }

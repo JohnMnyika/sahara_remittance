@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image'; // Import the Image component
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ForexExchange from '../components/ForexExchange';
@@ -43,7 +44,7 @@ export default function Home() {
                         whileHover={{ scale: 1.05 }}
                         className={styles.featureCard}
                     >
-                        <img src="/icons/fast.svg" alt="Fast Transfers" />
+                        <Image src="/icons/fast.svg" alt="Fast Transfers" width={60} height={60} />
                         <h3>Fast Transfers</h3>
                         <p>Send money in minutes with our lightning-fast service.</p>
                     </motion.div>
@@ -51,7 +52,7 @@ export default function Home() {
                         whileHover={{ scale: 1.05 }}
                         className={styles.featureCard}
                     >
-                        <img src="/icons/low-fees.svg" alt="Low Fees" />
+                        <Image src="/icons/low-fees.svg" alt="Low Fees" width={60} height={60} />
                         <h3>Low Fees</h3>
                         <p>Enjoy competitive rates and low transaction fees.</p>
                     </motion.div>
@@ -59,7 +60,7 @@ export default function Home() {
                         whileHover={{ scale: 1.05 }}
                         className={styles.featureCard}
                     >
-                        <img src="/icons/secure.svg" alt="Secure & Reliable" />
+                        <Image src="/icons/secure.svg" alt="Secure & Reliable" width={60} height={60} />
                         <h3>Secure & Reliable</h3>
                         <p>Your money is safe with our advanced security measures.</p>
                     </motion.div>
@@ -77,14 +78,14 @@ export default function Home() {
                         whileHover={{ scale: 1.05 }}
                         className={styles.testimonialCard}
                     >
-                        <p>"Sahara Remittance made sending money abroad so easy and affordable. Highly recommended!"</p>
+                        <p>&quot;Sahara Remittance made sending money abroad so easy and affordable. Highly recommended!&quot;</p>
                         <span>- John Doe</span>
                     </motion.div>
                     <motion.div
                         whileHover={{ scale: 1.05 }}
                         className={styles.testimonialCard}
                     >
-                        <p>"The best remittance service I've ever used. Fast, secure, and reliable."</p>
+                        <p>&quot;The best remittance service I&apos;ve ever used. Fast, secure, and reliable.&quot;</p>
                         <span>- Jane Smith</span>
                     </motion.div>
                 </div>
