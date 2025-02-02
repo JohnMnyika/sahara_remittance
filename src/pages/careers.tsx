@@ -26,13 +26,13 @@ export default function Careers() {
                         </div>
                         <div className={styles.jobCard}>
                             <h3>Customer Support Specialist</h3>
-                            <p>Location: New York, NY</p>
+                            <p>Location: Nairobi</p>
                             <p>Type: Full-time</p>
                             <button className={styles.button}>Apply Now</button>
                         </div>
                         <div className={styles.jobCard}>
                             <h3>Marketing Manager</h3>
-                            <p>Location: San Francisco, CA</p>
+                            <p>Location: Nairobi</p>
                             <p>Type: Full-time</p>
                             <button className={styles.button}>Apply Now</button>
                         </div>
