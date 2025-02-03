@@ -1,4 +1,5 @@
-import '../styles/globals.scss'; // Import global styles
+// pages/_app.tsx
+import '../styles/globals.scss';
 import type { AppProps } from 'next/app';
 
 function MyApp({ Component, pageProps }: AppProps) {

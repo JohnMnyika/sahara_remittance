@@ -1,77 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import axios from 'axios';
 import styles from '../styles/ForexExchange.module.scss';
 
 const ForexExchange = () => {
-    const [forexRates, setForexRates] = useState<{ currencyPair: string; buyRate: number; sellRate: number }[]>([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');
+    const [exchangeRates, setExchangeRates] = useState([
+        { pair: 'EUR/USD', rate: 1.1002, change: 0 },
+        { pair: 'GBP/USD', rate: 1.2505, change: 0 },
+        { pair: 'USD/JPY', rate: 134.56, change: 0 },
+        { pair: 'AUD/USD', rate: 0.6703, change: 0 },
+    ]);
+
+    const [currentDate] = useState(new Date().toLocaleDateString());
 
     useEffect(() => {
-        const fetchForexData = async () => {
-            try {
-                const apiKey = '89b85d20ed5cbc6e40f9668e'; // Replace with your API key
-                const response = await axios.get(`https://v6.exchangerate-api.com/v6/${apiKey}/latest/USD`);
-                const rates = response.data.conversion_rates;
+        // Simulate live exchange rate updates
+        const interval = setInterval(() => {
+            setExchangeRates((prevRates) =>
+                prevRates.map((rate) => {
+                    const newRate = parseFloat((rate.rate + (Math.random() - 0.5) * 0.01).toFixed(4));
+                    const change = ((newRate - rate.rate) / rate.rate) * 100;
+                    return {
+                        ...rate,
+                        rate: newRate,
+                        change: parseFloat(change.toFixed(2)), // Round to 2 decimal places
+                    };
+                })
+            );
+        }, 5000); // Update every 5 seconds
 
-                // Define the currency pairs you want to display
-                const currencies = ['EUR', 'GBP', 'JPY', 'CAD', 'AUD'];
-                const updatedRates = currencies.map((currency) => ({
-                    currencyPair: `USD/${currency}`,
-                    buyRate: rates[currency],
-                    sellRate: rates[currency] * 0.99, // Adjust sell rate for demonstration
-                }));
-
-                setForexRates(updatedRates);
-                setLoading(false);
-            } catch (err) {
-                console.error('Error fetching forex data:', err); // Log the error
-                setError('Failed to fetch forex data. Please try again later.');
-                setLoading(false);
-            }
-        };
-
-        fetchForexData(); // Fetch data immediately
-        const interval = setInterval(fetchForexData, 60000); // Refresh every 60 seconds
-
-        return () => clearInterval(interval); // Cleanup interval on unmount
+        return () => clearInterval(interval);
     }, []);
 
     return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className={styles.forexExchange}
-        >
-            <h2>Forex Exchange Rates</h2>
-            {loading ? (
-                <p>Loading forex rates...</p>
-            ) : error ? (
-                <p className={styles.error}>{error}</p>
-            ) : (
-                <div className={styles.table}>
-                    <div className={styles.tableHeader}>
-                        <div className={styles.column}>Currency Pair</div>
-                        <div className={styles.column}>Buy Rate</div>
-                        <div className={styles.column}>Sell Rate</div>
-                    </div>
-                    {forexRates.map((rate, index) => (
+        <section className={styles.forexExchange}>
+            <div className={styles.container}>
+                <h2>Forex Exchange Rates</h2>
+                <p className={styles.date}>As of {currentDate}</p>
+                <div className={styles.ratesGrid}>
+                    {exchangeRates.map((rate, index) => (
                         <motion.div
-                            key={index}
-                            className={styles.tableRow}
-                            whileHover={{ scale: 1.02 }}
-                            transition={{ type: 'spring', stiffness: 300 }}
+                            key={rate.pair}
+                            className={styles.rateCard}
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: index * 0.2 }}
                         >
-                            <div className={styles.column}>{rate.currencyPair}</div>
-                            <div className={styles.column}>{rate.buyRate.toFixed(4)}</div>
-                            <div className={styles.column}>{rate.sellRate.toFixed(4)}</div>
+                            <div className={styles.pair}>{rate.pair}</div>
+                            <motion.div
+                                className={styles.rate}
+                                key={rate.pair}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                            >
+                                {rate.rate}
+                            </motion.div>
+                            <motion.div
+                                className={`${styles.change} ${
+                                    rate.change >= 0 ? styles.up : styles.down
+                                }`}
+                                initial={{ opacity: 0, y: 10 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5 }}
+                                role="status"
+                                aria-live="polite"
+                            >
+                                {rate.change >= 0 ? '▲' : '▼'} {Math.abs(rate.change).toFixed(2)}%
+                            </motion.div>
                         </motion.div>
                     ))}
                 </div>
-            )}
-        </motion.div>
+            </div>
+        </section>
     );
 };
 

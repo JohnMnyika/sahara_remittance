@@ -1,13 +1,37 @@
+// pages/index.tsx
 import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image'; // Import the Image component
+import Image from 'next/image';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import ForexExchange from '../components/ForexExchange';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {
+    // Animation variants for the feature cards
+    const featureVariants = {
+        rest: {
+            y: 0,
+            opacity: 1,
+            scale: 1,
+            transition: {
+                type: 'spring',
+                bounce: 0.4,
+                duration: 0.8,
+            },
+        },
+        hover: {
+            y: -10, // Slight upward movement on hover
+            scale: 1.05, // Slight scale-up on hover
+            transition: {
+                type: 'spring',
+                bounce: 0.4,
+                duration: 0.3,
+            },
+        },
+    };
+
     return (
         <div className={styles.home}>
             <Head>
@@ -28,7 +52,7 @@ export default function Home() {
                         <motion.button
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="button"
+                            className={styles.button}
                         >
                             Get Started
                         </motion.button>
@@ -41,7 +65,9 @@ export default function Home() {
                 <h2>Why Choose Sahara Remittance?</h2>
                 <div className={styles.featureGrid}>
                     <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        initial="rest"
+                        whileHover="hover"
+                        variants={featureVariants}
                         className={styles.featureCard}
                     >
                         <Image src="/icons/fast.svg" alt="Fast Transfers" width={60} height={60} />
@@ -49,7 +75,9 @@ export default function Home() {
                         <p>Send money in minutes with our lightning-fast service.</p>
                     </motion.div>
                     <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        initial="rest"
+                        whileHover="hover"
+                        variants={featureVariants}
                         className={styles.featureCard}
                     >
                         <Image src="/icons/low-fees.svg" alt="Low Fees" width={60} height={60} />
@@ -57,7 +85,9 @@ export default function Home() {
                         <p>Enjoy competitive rates and low transaction fees.</p>
                     </motion.div>
                     <motion.div
-                        whileHover={{ scale: 1.05 }}
+                        initial="rest"
+                        whileHover="hover"
+                        variants={featureVariants}
                         className={styles.featureCard}
                     >
                         <Image src="/icons/secure.svg" alt="Secure & Reliable" width={60} height={60} />
