@@ -121,6 +121,44 @@ export default function Careers() {
                 'Strong financial acumen and leadership skills.',
             ],
         },
+        {
+            title: 'Accountant',
+            location: 'Nairobi',
+            type: 'Full-time',
+            description: 'Manage financial records, prepare reports, and ensure compliance with accounting standards.',
+            responsibilities: [
+                'Prepare and maintain financial statements and reports.',
+                'Manage accounts payable and receivable.',
+                'Conduct monthly, quarterly, and annual financial reconciliations.',
+                'Ensure compliance with tax regulations and filing requirements.',
+            ],
+            requirements: [
+                'Bachelor’s degree in Accounting, Finance, or related field.',
+                'CPA or ACCA certification preferred.',
+                '3+ years of experience in accounting or finance.',
+                'Proficiency in accounting software (e.g., QuickBooks, SAP).',
+                'Strong attention to detail and organizational skills.',
+            ],
+        },
+        {
+            title: 'Software Developer',
+            location: 'Remote',
+            type: 'Full-time',
+            description: 'Design, develop, and maintain software solutions to support our remittance platform.',
+            responsibilities: [
+                'Develop and maintain web and mobile applications.',
+                'Collaborate with cross-functional teams to define software requirements.',
+                'Write clean, scalable, and well-documented code.',
+                'Troubleshoot and debug software issues.',
+            ],
+            requirements: [
+                'Bachelor’s degree in Computer Science, Software Engineering, or related field.',
+                '3+ years of experience in software development.',
+                'Proficiency in programming languages such as JavaScript, Python, or Java.',
+                'Experience with frameworks like React, Node.js, or Django.',
+                'Strong problem-solving and communication skills.',
+            ],
+        },
     ];
 
     return (
