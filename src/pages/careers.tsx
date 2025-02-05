@@ -19,7 +19,9 @@ export default function Careers() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        resume: null as File | null,
+        expectedSalary: '',
+        cv: null as File | null, // Field for CV
+        certificates: null as File | null, // Field for certificates
     });
 
     const handleJobSelection = (job: Job) => {
@@ -29,8 +31,10 @@ export default function Careers() {
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { id, value, files } = e.target;
-        if (id === 'resume' && files) {
-            setFormData({ ...formData, resume: files[0] });
+        if (id === 'cv' && files) {
+            setFormData({ ...formData, cv: files[0] });
+        } else if (id === 'certificates' && files) {
+            setFormData({ ...formData, certificates: files[0] });
         } else {
             setFormData({ ...formData, [id]: value });
         }
@@ -159,6 +163,84 @@ export default function Careers() {
                 'Strong problem-solving and communication skills.',
             ],
         },
+        {
+            title: 'Treasury Officer',
+            location: '[Your Location]',
+            type: 'Full-time',
+            description: 'Manage liquidity, foreign exchange transactions, and financial risk to ensure smooth remittance operations.',
+            responsibilities: [
+                'Monitor and manage daily cash positions across multiple currencies and bank accounts.',
+                'Forecast cash flows to ensure sufficient liquidity for remittance payouts.',
+                'Optimize working capital by managing inflows and outflows efficiently.',
+                'Coordinate with financial institutions to maintain adequate credit lines.',
+                'Monitor forex market trends and execute currency trades to manage exchange rate risks.',
+                'Work with banks and forex dealers to secure competitive exchange rates.',
+                'Implement hedging strategies (e.g., forward contracts, swaps) to mitigate currency risks.',
+                'Ensure compliance with Central Bank regulations on forex transactions.',
+                'Oversee domestic and international payments to partners, agents, and vendors.',
+                'Ensure timely and cost-effective fund transfers across different payment channels.',
+                'Reconcile treasury transactions with bank statements and accounting records.',
+                'Resolve payment discrepancies with banks and financial service providers.',
+                'Ensure compliance with anti-money laundering (AML) and Know Your Customer (KYC) requirements.',
+                'Prepare and submit regulatory reports to the Central Bank, Financial Intelligence Unit (FIU), and other authorities.',
+                'Work with auditors and compliance teams for internal and external audits.',
+                'Maintain strong relationships with banks, financial institutions, and payment partners.',
+                'Negotiate bank fees, interest rates, and forex margins to optimize costs.',
+                'Identify and implement new financial solutions to improve efficiency.',
+                'Utilize treasury management systems (TMS) and financial platforms for automation.',
+                'Improve processes for faster, more secure, and cost-effective transactions.',
+                'Analyze financial data to support strategic decision-making.',
+            ],
+            requirements: [
+                'Bachelor’s degree in Finance, Accounting, Economics, or a related field.',
+                'Professional qualifications preferred: Certified Treasury Professional (CTP), Chartered Financial Analyst (CFA – Level 1 or higher), ACCA / CPA, or ACI Dealing Certificate.',
+                'Strong understanding of forex trading, liquidity management, and financial risk.',
+                'Experience with treasury management systems (TMS), SWIFT, RTGS, and payment platforms.',
+                'Knowledge of Central Bank regulations on remittances, forex, and capital controls.',
+                'Proficiency in Excel, financial modeling, and data analysis tools (Power BI, SQL, etc.).',
+                'Excellent analytical and problem-solving skills.',
+                'Strong negotiation and communication abilities.',
+                'High attention to detail and risk awareness.',
+                'Ability to work in a high-pressure, fast-paced environment.',
+            ],
+        },
+        {
+            title: 'Network Engineer',
+            location: '[Your Location]',
+            type: 'Full-time',
+            description: 'Design, implement, manage, and maintain a secure and reliable network infrastructure for remittance operations.',
+            responsibilities: [
+                'Design, implement, and manage the company’s network infrastructure (LAN, WAN, MPLS, VPN, SD-WAN).',
+                'Ensure high availability and redundancy for critical remittance applications.',
+                'Configure and maintain routers, switches, firewalls, and load balancers.',
+                'Work with ISPs and vendors to optimize network performance and costs.',
+                'Ensure compliance with PCI DSS, ISO 27001, and other financial security standards.',
+                'Monitor and configure firewalls, intrusion prevention/detection systems (IPS/IDS), and VPNs.',
+                'Regularly perform network security audits, vulnerability assessments, and penetration testing.',
+                'Implement Zero Trust Architecture (ZTA) and role-based access control (RBAC) for secure data access.',
+                'Manage and optimize cloud network environments (AWS, Azure, Google Cloud).',
+                'Configure and troubleshoot VPNs & remote access solutions for distributed teams.',
+                'Ensure secure API and microservices communication for financial transactions.',
+                'Use network monitoring tools (e.g., PRTG, SolarWinds, Zabbix, Nagios) to detect and resolve issues proactively.',
+                'Troubleshoot network outages and performance issues, ensuring 99.99% uptime.',
+                'Conduct traffic analysis and bandwidth optimization to prevent bottlenecks.',
+                'Implement and test failover strategies for network resilience.',
+                'Maintain disaster recovery (DR) sites and ensure rapid failover during incidents.',
+                'Collaborate with cybersecurity teams for incident response planning.',
+                'Work closely with DevOps, cybersecurity, and software engineering teams to ensure smooth operations.',
+                'Maintain network diagrams, SOPs, and asset documentation.',
+                'Provide training and support to IT staff on networking best practices.',
+            ],
+            requirements: [
+                'Bachelor’s degree in Computer Science, IT, Network Engineering, or related field.',
+                'Certifications preferred: CCNA/CCNP, Fortinet NSE 4+, Palo Alto PCNSE, AWS Certified Advanced Networking – Specialty, or CompTIA Network+ or Security+.',
+                'Strong expertise in routing and switching (BGP, OSPF, VLAN, STP, etc.).',
+                'Experience with firewall security policies (Fortinet, Cisco ASA, Palo Alto, pfSense).',
+                'Knowledge of load balancers (F5, HAProxy, Nginx, etc.).',
+                'Experience with cloud networking (AWS, Azure, GCP, hybrid cloud setups).',
+                'Familiarity with SIEM tools (Splunk, ELK, Graylog) for security event monitoring.',
+            ],
+        },
     ];
 
     return (
@@ -227,8 +309,34 @@ export default function Careers() {
                                     <input type="email" id="email" value={formData.email} onChange={handleInputChange} required />
                                 </div>
                                 <div className={styles.formGroup}>
-                                    <label htmlFor="resume">Upload Resume</label>
-                                    <input type="file" id="resume" accept=".pdf,.doc,.docx" onChange={handleInputChange} required />
+                                    <label htmlFor="expectedSalary">Expected Salary</label>
+                                    <input
+                                        type="text"
+                                        id="expectedSalary"
+                                        value={formData.expectedSalary}
+                                        onChange={handleInputChange}
+                                        placeholder="Enter your expected salary (e.g., $50,000)"
+                                        required
+                                    />
+                                </div>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="cv">Upload CV</label>
+                                    <input
+                                        type="file"
+                                        id="cv"
+                                        accept=".pdf,.doc,.docx"
+                                        onChange={handleInputChange}
+                                        required
+                                    />
+                                </div>
+                                <div className={styles.formGroup}>
+                                    <label htmlFor="certificates">Upload Certificates</label>
+                                    <input
+                                        type="file"
+                                        id="certificates"
+                                        accept=".pdf,.doc,.docx"
+                                        onChange={handleInputChange}
+                                    />
                                 </div>
                                 <button type="submit" className={styles.button}>Submit Application</button>
                             </form>
